@@ -11,9 +11,9 @@ public class Exercise3 {
     */
 
     public static String extractURL(String text) {
-        String regex = "write your regex pattern here!";  // TODO
+        String regex = "http(s)?://(www\\.)?(.+\\.)+[a-zA-Z]+";
 
-        Pattern pattern = Pattern.compile(regex);
+        Pattern pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(text);
 
         if (matcher.find()) {
@@ -56,6 +56,6 @@ public class Exercise3 {
     }
 
     public static void main(String[] args) {
-        // test your code here!
+        System.out.println(extractURL("http://www.example.co"));
     }
 }
