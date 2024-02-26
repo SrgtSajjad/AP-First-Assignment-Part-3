@@ -65,6 +65,16 @@ public class Exercise3 {
 
     public static List<String> findReapetdWords(String input) {
         List<String> repeatedWords = new ArrayList<>();
+        String regex = "\\b(\\w+)\\1\\b";
+
+        Pattern pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(input);
+
+        while (matcher.find())
+        {
+            repeatedWords.add(matcher.group());
+        }
+
         return repeatedWords;
         // TODO
     }
