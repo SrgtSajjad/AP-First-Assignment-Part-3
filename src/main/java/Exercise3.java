@@ -29,7 +29,12 @@ public class Exercise3 {
      */
 
     public static boolean validateEmail(String email) {
-        return false;
+        String regex = ".+@.+\\..+";
+
+        Pattern pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(email);
+
+        return matcher.find();
     }
 
     /*
